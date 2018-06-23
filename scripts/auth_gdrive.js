@@ -6,7 +6,7 @@ const express = require('express');
 const get_port = require('get-port');
 const opn = require('opn');
 const {google} = require('googleapis');
-const credentials = require('../credentials/gdrive.json');
+const credentials = requir;e('../credentials/gdrive.json');
 const SCOPES = ['https://www.googleapis.com/auth/drive'];
 const {client_secret, client_id} = credentials.installed;
 

@@ -1,12 +1,12 @@
-require('./test');
+require("./test");
 
-const assert = require('assert');
-const promiseMe = require('mocha-promise-me');
+const assert = require("assert");
+const promiseMe = require("mocha-promise-me");
 
-describe('GoogleDrive', function() {
-	const app = require('../');
+describe("GoogleDrive", function() {
+	const app = require("../");
 
-	const integration = app.integration('GoogleDrive');
+	const integration = app.integration("GoogleDrive");
 	it("GoogleDrive integration should exist", function() {
 		assert(integration);
 	});
@@ -17,7 +17,7 @@ describe('GoogleDrive', function() {
 
 	describe("credentials", function() {
 		it("gdrive.json should exist inside of the credentials directory", function() {
-			credentials = require('../credentials/gdrive.json');
+			credentials = require("../credentials/gdrive.json");
 		});
 
 		it("installed->client_id should exist in credentials file", function() {
@@ -41,7 +41,10 @@ describe('GoogleDrive', function() {
 		});
 
 		it("Access token should not be the same since we forced a reset", function() {
-			assert.notEqual(original_access_token,connection.get_tokens()["access_token"]);
+			assert.notEqual(
+				original_access_token,
+				connection.get_tokens()["access_token"]
+			);
 			original_access_token = connection.get_tokens()["access_token"];
 		});
 
@@ -50,17 +53,19 @@ describe('GoogleDrive', function() {
 			props["force_reset"] = false;
 			this.timeout(15000);
 			connection = integration(props, function() {
-				assert.strictEqual(original_access_token,connection.get_tokens()["access_token"]);
+				assert.strictEqual(
+					original_access_token,
+					connection.get_tokens()["access_token"]
+				);
 				done();
 			});
 		});
 	});
 
-	describe('functions', function() {
-
+	describe("functions", function() {
 		//Establish a fresh credentials and conection object before each test
 		beforeEach(function(done) {
-			credentials = require('../credentials/gdrive.json');
+			credentials = require("../credentials/gdrive.json");
 			let props = credentials.tokens;
 			this.timeout(15000);
 			connection = integration(props, function() {
@@ -68,39 +73,41 @@ describe('GoogleDrive', function() {
 			});
 		});
 
-
-		it('list files should work successfully', function(done) {
-			let assertion = (result) => {
-			    assert.ok(result);
-			    assert.ok(result.files);
-			    if(result.files.length > 0 && result.nextPageToken) {
+		it("list files should work successfully", function(done) {
+			let assertion = result => {
+				assert.ok(result);
+				assert.ok(result.files);
+				if (result.files.length > 0 && result.nextPageToken) {
 				}
-			   	done();
+				done();
 			};
 
 			promiseMe.thatYouResolve(connection.list_files(), assertion);
 		});
 
-		it('If there is a nextpageToken, it works and gives us different files', function(done) {
+		it("If there is a nextpageToken, it works and gives us different files", function(done) {
 			let firstFileID = null;
 			let nextPageToken = null;
 
-			let secondPageAssertion = (result) => {
+			let secondPageAssertion = result => {
 				assert.ok(result);
 				assert.notEqual(firstFileID, result.files[0].id);
 				done();
 			};
 
-			let assertion = (result) => {
-			    assert.ok(result);
-			    assert.ok(result.files);
-			    if(result.files.length > 0 && result.nextPageToken) {
-			    	firstFileID = result.files[0].id;
-			    	nextPageToken = result.nextPageToken;
-			    	promiseMe.thatYouResolve(connection.list_files(10, nextPageToken), secondPageAssertion);
+			let assertion = result => {
+				assert.ok(result);
+				assert.ok(result.files);
+				if (result.files.length > 0 && result.nextPageToken) {
+					firstFileID = result.files[0].id;
+					nextPageToken = result.nextPageToken;
+					promiseMe.thatYouResolve(
+						connection.list_files(10, nextPageToken),
+						secondPageAssertion
+					);
 				} else {
-			   		done();
-			   	}
+					done();
+				}
 			};
 
 			promiseMe.thatYouResolve(connection.list_files(), assertion);
