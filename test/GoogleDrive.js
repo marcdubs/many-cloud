@@ -112,5 +112,30 @@ describe("GoogleDrive", function() {
 
 			promiseMe.thatYouResolve(connection.list_files(), assertion);
 		});
+
+		it("If there is more than one file in the drive, list_all_files() should have more", function(done) {
+			this.timeout(15000);
+			let list_all_files_assertion = result => {
+				assert.ok(result.files);
+				assert(result.files.length > 1);
+				done();
+			};
+
+			let list_files_assertion = result => {
+				assert.ok(result);
+				if (!result.nextPageToken) done();
+				else {
+					promiseMe.thatYouResolve(
+						connection.list_all_files(),
+						list_all_files_assertion
+					);
+				}
+			};
+
+			promiseMe.thatYouResolve(
+				connection.list_files(1),
+				list_files_assertion
+			);
+		});
 	});
 });
