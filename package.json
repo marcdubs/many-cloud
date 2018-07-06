@@ -4,7 +4,7 @@
   "description": "A Node module for abstracting file management and interfacing with a variety of cloud storages.",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest -o --watch",
     "auth_gdrive": "node scripts/auth_gdrive"
   },
   "repository": {
