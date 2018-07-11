@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest -o --watch",
     "test:nowatch": "jest -o",
+    "test:coverage": "jest --coverage",
     "auth_gdrive": "node scripts/auth_gdrive"
   },
   "repository": {

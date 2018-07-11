@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `"Missing name argument."`;
+
+exports[` 2`] = `"Integration \\"not_an_integration\\" not found."`;

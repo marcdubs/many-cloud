@@ -4,7 +4,7 @@ describe("Index", () => {
     expect(app).not.toBeNull();
   });
 
-  describe("#integration_list", () => {
+  describe("integration_list", () => {
     const loaded_integration_list = require("../lib/integrations/list.json");
     it("/lib/integrations/list.json should exist", () => {
       expect(loaded_integration_list).not.toBeNull();
@@ -14,10 +14,10 @@ describe("Index", () => {
       expect(app.integration_list).not.toBeNull();
     });
 
-    describe("All Integrations Exist", () => {
+    describe("all Integrations Exist", () => {
       for (let i = 0; i < loaded_integration_list.length; i++)
         it(
-          'Integration: "' + loaded_integration_list[i] + '" should exist',
+          'integration: "' + loaded_integration_list[i] + '" should exist',
           () => {
             expect(app.integration_list).toContainEqual(
               loaded_integration_list[i]
@@ -27,11 +27,25 @@ describe("Index", () => {
     });
   });
 
-  describe("#integration", () => {
-    const loaded_integration_list = require("../lib/integrations/list.json");
-    for (let i = 0; i < loaded_integration_list.length; i++)
-      it('Can get Integration: "' + loaded_integration_list[i] + '"', () => {
-        expect(app.integration(loaded_integration_list[i])).not.toBeNull();
-      });
+  describe("integration", () => {
+    describe("test all", () => {
+      const loaded_integration_list = require("../lib/integrations/list.json");
+      for (let i = 0; i < loaded_integration_list.length; i++)
+        it('can get Integration: "' + loaded_integration_list[i] + '"', () => {
+          expect(app.integration(loaded_integration_list[i])).not.toBeNull();
+        });
+    });
+
+    describe("missing argument", () => {
+      expect(() => {
+        app.integration();
+      }).toThrowErrorMatchingSnapshot();
+    });
+
+    describe("unknown integration", () => {
+      expect(() => {
+        app.integration("not_an_integration");
+      }).toThrowErrorMatchingSnapshot();
+    });
   });
 });
