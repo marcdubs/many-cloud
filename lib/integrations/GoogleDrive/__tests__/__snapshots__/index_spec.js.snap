@@ -14,8 +14,6 @@ exports[`GoogleDrive integration function list_files page size rejects if negati
 
 exports[`GoogleDrive integration function list_files when google drive api returns an error function rejects 1`] = `"super fancy error from google"`;
 
-exports[`GoogleDrive integration function upload_file rejects when file not found 1`] = `"ENOENT: no such file or directory, stat 'A:\\\\notafile\\\\lol'"`;
-
 exports[`GoogleDrive integration function upload_file rejects when path is directory 1`] = `"Path represents a directory. Please use upload_folder."`;
 
 exports[`GoogleDrive integration function upload_file rejects with no parameter 1`] = `"Missing file path parameter."`;
