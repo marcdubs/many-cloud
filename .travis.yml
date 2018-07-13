@@ -7,4 +7,5 @@ cache:
 env:
   - IS_CI=true
 script:
+  - mkdir credentials
   - npm run test:ci
