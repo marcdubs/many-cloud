@@ -1,5 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`GoogleDrive authentication_token fs.writeFile on error function throws an error if not null 1`] = `
+"Error saving Google Drive Credentials file:
+oh golly, everything is broken"
+`;
+
+exports[`GoogleDrive integration credentials connection authenticate fails with an error when passed in no props 1`] = `"Argument is undefined."`;
+
 exports[`GoogleDrive integration function authenticate when empty props are passed in an error is thrown 1`] = `"Argument must contain either \\"authentication_token\\" and \\"redirect_uri\\" or both \\"access_token\\" and \\"refresh_token\\"."`;
 
 exports[`GoogleDrive integration function delete_file delete successfull when response is "done" 1`] = `"done!"`;
