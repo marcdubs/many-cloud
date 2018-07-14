@@ -7,7 +7,7 @@
     "test": "jest -o --watch",
     "test:nowatch": "jest -o",
     "test:coverage": "jest --coverage",
-    "test:ci": "jest --coverage",
+    "test:ci": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "auth_gdrive": "node scripts/auth_gdrive"
   },
   "repository": {
@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/marcdubs/many-cloud#readme",
   "devDependencies": {
+    "coveralls": "^3.0.2",
     "express": "^4.16.3",
     "get-port": "^3.2.0",
     "jest": "^23.3.0",
