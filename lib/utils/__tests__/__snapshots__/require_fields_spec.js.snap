@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`require fields when an object does not contain a required field throws an error 1`] = `"Missing argument: \\"a_key\\"."`;
+
+exports[`require fields when an undefined object is passed in throws an error 1`] = `"No object argument."`;
+
+exports[`require fields when fields is not an array throws an error 1`] = `"fields argument isn't an array"`;
+
+exports[`require fields when fields is undefined throws an error 1`] = `"No fields argument."`;
