@@ -8,7 +8,8 @@
     "test:nowatch": "jest -o",
     "test:coverage": "jest --coverage",
     "test:ci": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "auth_gdrive": "node scripts/auth_gdrive"
+    "auth_gdrive": "node scripts/auth_gdrive",
+    "auth_box": "node scripts/auth_box"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,7 @@
     "prettier": "1.13.5"
   },
   "dependencies": {
+    "box-node-sdk": "^1.20.0",
     "googleapis": "^27.0.0",
     "mime": "^2.3.1"
   }
