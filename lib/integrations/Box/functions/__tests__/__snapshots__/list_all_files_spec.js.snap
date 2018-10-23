@@ -11,16 +11,20 @@ Object {
 `;
 
 exports[`list_all_files when there are no errors returns expected resolution 1`] = `
-Array [
-  "watup fam0",
-  "watup fam1",
-  "watup fam2",
-  "watup fam3",
-  "watup fam4",
-  "watup fam5",
-  "watup fam6",
-  "watup fam7",
-  "watup fam8",
-  "watup fam9",
-]
+Object {
+  "entries": Array [
+    "watup fam1",
+    "watup fam2",
+    "watup fam3",
+    "watup fam4",
+    "watup fam5",
+    "watup fam6",
+    "watup fam7",
+    "watup fam8",
+    "watup fam9",
+    "watup fam10",
+    undefined,
+  ],
+  "total_count": 10,
+}
 `;
