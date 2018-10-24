@@ -1,9 +1,11 @@
-const { Before, Given, When, Then } = require("cucumber");
+const { Before, Given, When, Then, setDefaultTimeout } = require("cucumber");
 const deep_equal = require("deep-equal");
 const assert = require("assert");
 
 let firstTimeGettingCredentials = true;
 const fs = require("fs");
+
+setDefaultTimeout(30000);
 
 const _getBoxCredentials = function() {
   if (process.env.IS_CI && firstTimeGettingCredentials) {
