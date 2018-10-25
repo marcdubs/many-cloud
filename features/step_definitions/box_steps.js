@@ -81,11 +81,47 @@ When(
   }
 );
 
+When(
+  "I call the function {string} on the integration with parameters saved as world key: {string}",
+  async function(func, world_key) {
+    this.function_result = await this.connection[func].apply(
+      this,
+      this[world_key].split(",")
+    );
+  }
+);
+
 Then("the entries must contain only the following:", function(dataTable) {
   assert.equal(
     deep_equal(dataTable.hashes(), this.function_result.entries),
     true
   );
+});
+
+Then("index {int} of entries field: {string} should equal: {string}", function(
+  index,
+  key,
+  expected
+) {
+  assert.equal(this.function_result.entries[index][key], expected);
+});
+
+Then("save index {int} of entires field: {string} as {string}", function(
+  index,
+  key,
+  world_key
+) {
+  this[world_key] = this.function_result.entries[index][key];
+});
+
+Then("delete the file identified by the world key: {string}", async function(
+  world_key
+) {
+  await this.connection["delete_file"](this[world_key]);
+});
+
+Then("the result is undefined", function() {
+  assert.equal(this.function_result, undefined);
 });
 
 Then("print the result", function() {
