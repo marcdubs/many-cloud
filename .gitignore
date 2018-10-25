@@ -62,3 +62,6 @@ typings/
 
 # credential directory for cloud storages
 credentials/
+
+# vscode
+.vscode/

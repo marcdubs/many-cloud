@@ -9,3 +9,4 @@ env:
 script:
   - mkdir credentials
   - npm run test:ci
+  - npm run cukes

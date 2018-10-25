@@ -7,6 +7,6 @@ Many Cloud is an open source utility that creates a generic interface for many c
 | Platform | Supported |
 |--|--|
 | ![Google Drive](docs/gdrive.png) | ![Yes](docs/check.png) | 
-| ![Box](docs/box.png) | ![To do](docs/x.png) | 
+| ![Box](docs/box.png) | ![Yes](docs/check.png) | 
 | ![Box](docs/dropbox.png) | ![To do](docs/x.png) | 
 | More to come! | |
