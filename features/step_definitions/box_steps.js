@@ -60,36 +60,12 @@ AfterAll(async function() {
   }
 });
 
-Given("I create a {string} integration", function(name) {
-  this.integration = require("../../").integration(name);
-});
-
 Given("I connect to the demo box account", async function() {
   let credentials = await _getBoxCredentials();
   let props = JSON.parse(JSON.stringify(credentials.tokens));
   props.credentials = credentials;
   this.connection = await this.integration(props);
 });
-
-When(
-  "I call the function {string} on the integration with parameters: {string}",
-  async function(func, params) {
-    this.function_result = await this.connection[func].apply(
-      this,
-      params.split(",")
-    );
-  }
-);
-
-When(
-  "I call the function {string} on the integration with parameters saved as world key: {string}",
-  async function(func, world_key) {
-    this.function_result = await this.connection[func].apply(
-      this,
-      this[world_key].split(",")
-    );
-  }
-);
 
 Then("the entries must contain only the following:", function(dataTable) {
   assert.equal(
@@ -112,18 +88,4 @@ Then("save index {int} of entires field: {string} as {string}", function(
   world_key
 ) {
   this[world_key] = this.function_result.entries[index][key];
-});
-
-Then("delete the file identified by the world key: {string}", async function(
-  world_key
-) {
-  await this.connection["delete_file"](this[world_key]);
-});
-
-Then("the result is undefined", function() {
-  assert.equal(this.function_result, undefined);
-});
-
-Then("print the result", function() {
-  console.log(this.function_result);
 });
