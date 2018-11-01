@@ -53,3 +53,14 @@ Given("I connect to the demo google account", async function() {
   props.credentials = credentials;
   this.connection = await this.integration(props);
 });
+
+Then("the files must contain only the following:", function(dataTable) {
+  assert.equal(
+    deep_equal(dataTable.hashes(), this.function_result.files),
+    true
+  );
+});
+
+Then("save the result field: {string} as {string}", function(key, world_key) {
+  this[world_key] = this.function_result[key];
+});
