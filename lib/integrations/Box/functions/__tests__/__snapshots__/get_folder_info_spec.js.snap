@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`get_folder_info when the operation throws an error rejects with the error 1`] = `"Look what you did!"`;

@@ -64,3 +64,13 @@ Feature: Box Integration Functions
         When I call the function "get_file_info" on the integration with parameters: "246512849364,name"
         Then the result field: "name" should be: "hanzo.png"
         And the result field: "sha1" should be: "undefined"
+
+    Scenario: Get all folder info
+        When I call the function "get_folder_info" on the integration with parameters: "41483367730"
+        Then the result field: "name" should be: "Music Test"
+        And the result field: "size" should be: "3515529"
+    
+    Scenario: Get specific folder info
+        When I call the function "get_folder_info" on the integration with parameters: "41483367730,name"
+        Then the result field: "name" should be: "Music Test"
+        And the result field: "size" should be: "undefined"
