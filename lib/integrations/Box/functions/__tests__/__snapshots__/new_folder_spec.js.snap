@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`new_folder when operation is unsuccessfull rejects with the error 1`] = `[Error: That didn't work!]`;
