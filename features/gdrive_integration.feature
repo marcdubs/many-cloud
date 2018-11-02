@@ -43,3 +43,13 @@ Feature: Google Drive Functions
         When I call the function "download_file" on the integration with parameters: "1x7F7Y0v6tuNZrgzpp15gZhW8MUZhA8I-,test.png"
         Then the local file "test.png" exists
         And delete the local file "test.png"
+
+    Scenario: Get all file info
+        When I call the function "get_file_info" on the integration with parameters: "1x7F7Y0v6tuNZrgzpp15gZhW8MUZhA8I-"
+        Then the result field: "name" should be: "Java_logo.png"
+        And the result field: "md5Checksum" should be: "b7bfda87f22e4772f581e17bc533aa0c"
+
+    Scenario: Get specific file info
+        When I call the function "get_file_info" on the integration with parameters: "1x7F7Y0v6tuNZrgzpp15gZhW8MUZhA8I-,name"
+        Then the result field: "name" should be: "Java_logo.png"
+        And the result field: "md5Checksum" should be: "undefined"

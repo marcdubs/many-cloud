@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`get_file_info when the operation is successfull and params are null calls data.drive.files.get with default params 1`] = `"kind, id, name, mimeType, description, trashed, explicitlyTrashed, parents, modifiedTime, fullFileExtension, md5Checksum, size"`;
+
+exports[`get_file_info when the operation is unsuccessfull rejects with the error 1`] = `"Oh boy!"`;
