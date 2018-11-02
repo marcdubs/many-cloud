@@ -38,3 +38,8 @@ Feature: Google Drive Functions
         And save the result field: "id" as "params"
         And I call the function "delete_folder" on the integration with parameters saved as world key: "params"
         Then the result is undefined
+
+    Scenario: Download a file
+        When I call the function "download_file" on the integration with parameters: "1x7F7Y0v6tuNZrgzpp15gZhW8MUZhA8I-,test.png"
+        Then the local file "test.png" exists
+        And delete the local file "test.png"

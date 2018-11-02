@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`download_file when the get operation returns an error rejects with the error 1`] = `"Something went wrong!"`;
