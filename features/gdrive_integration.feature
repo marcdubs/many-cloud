@@ -53,3 +53,13 @@ Feature: Google Drive Functions
         When I call the function "get_file_info" on the integration with parameters: "1x7F7Y0v6tuNZrgzpp15gZhW8MUZhA8I-,name"
         Then the result field: "name" should be: "Java_logo.png"
         And the result field: "md5Checksum" should be: "undefined"
+
+    Scenario: Get all folder info
+        When I call the function "get_folder_info" on the integration with parameters: "1k1XOAZfa-8UheF39kl2izExwBlzgkwT5"
+        Then the result field: "name" should be: "Images"
+        And the result field: "mimeType" should be: "application/vnd.google-apps.folder"
+
+    Scenario: Get specific folder info
+        When I call the function "get_folder_info" on the integration with parameters: "1k1XOAZfa-8UheF39kl2izExwBlzgkwT5, name"
+        Then the result field: "name" should be: "Images"
+        And the result field: "mimeType" should be: "undefined"      
