@@ -7,6 +7,8 @@ const {
   setDefaultTimeout
 } = require("cucumber");
 
+const fs = require("fs");
+
 const assert = require("assert");
 
 Given("I create a {string} integration", function(name) {
@@ -70,6 +72,14 @@ Then("the result field: {string} should be: {string}", function(
 
 Then("the result is undefined", function() {
   assert.equal(this.function_result, undefined);
+});
+
+Then("the local file {string} exists", function(path) {
+  assert(fs.existsSync(path));
+});
+
+Then("delete the local file {string}", function(path) {
+  fs.unlinkSync(path);
 });
 
 Then("print the result", function() {
