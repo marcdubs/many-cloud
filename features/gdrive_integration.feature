@@ -27,3 +27,14 @@ Feature: Google Drive Functions
         And save the result field: "id" as "params"
         And I call the function "delete_file" on the integration with parameters saved as world key: "params"
         Then the result is undefined
+
+    Scenario: Create a folder
+        When I call the function "new_folder" on the integration with parameters: "undefined,Test Folder"
+        And save the result field: "id" as "delete_id"
+        And delete the folder identified by the world key: "delete_id"
+
+    Scenario: Delete a folder
+        When I call the function "new_folder" on the integration with parameters: "undefined,Test Folder"
+        And save the result field: "id" as "params"
+        And I call the function "delete_folder" on the integration with parameters saved as world key: "params"
+        Then the result is undefined
