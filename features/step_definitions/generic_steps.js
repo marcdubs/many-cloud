@@ -11,6 +11,17 @@ const fs = require("fs");
 
 const assert = require("assert");
 
+paramaterize = function(string) {
+  if (string === "null") {
+    string = null;
+  } else if (string === "undefined") {
+    string = undefined;
+  } else if (!isNaN(string)) {
+    string = parseInt(string);
+  }
+  return string;
+};
+
 Given("I create a {string} integration", function(name) {
   this.integration = require("../../").integration(name);
 });
@@ -24,13 +35,7 @@ When(
   async function(func, params_) {
     let params = params_.split(",");
     for (let i = 0; i < params.length; i++) {
-      if (params[i] === "null") {
-        params[i] = null;
-      } else if (params[i] === "undefined") {
-        params[i] = undefined;
-      } else if (!isNaN(params[i])) {
-        params[i] = parseInt(params[i]);
-      }
+      params[i] = paramaterize(params[i]);
     }
 
     this.function_result = await this.connection[func].apply(this, params);
@@ -67,7 +72,7 @@ Then("the result field: {string} should be: {string}", function(
   source,
   expected
 ) {
-  assert.equal(this.function_result[source], expected);
+  assert.equal(this.function_result[source], paramaterize(expected));
 });
 
 Then("the result is undefined", function() {

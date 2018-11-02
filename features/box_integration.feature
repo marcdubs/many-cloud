@@ -54,3 +54,13 @@ Feature: Box Integration Functions
         When I call the function "download_file" on the integration with parameters: "246512849364,test.png"
         Then the local file "test.png" exists
         And delete the local file "test.png"
+
+    Scenario: Get all file info
+        When I call the function "get_file_info" on the integration with parameters: "246512849364"
+        Then the result field: "name" should be: "hanzo.png"
+        And the result field: "sha1" should be: "7bfe75ea785583e910222e5480950a811ea778ce"
+
+    Scenario: Get specific file info
+        When I call the function "get_file_info" on the integration with parameters: "246512849364,name"
+        Then the result field: "name" should be: "hanzo.png"
+        And the result field: "sha1" should be: "undefined"
