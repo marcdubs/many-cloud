@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`folder get_name when the name has not already been retrieved when the operation is unsuccessfull rejects with the error 1`] = `"Ask it"`;
+
+exports[`folder get_parent when the parent has not already been retrieved when the operation is unsuccessfull rejects with the error 1`] = `"Aol it"`;
+
+exports[`folder list_files when operation is successfull returns an array of correct folders and files 1`] = `
+Array [
+  Folder {
+    "connection": Object {
+      "list_all_files": [MockFunction] {
+        "calls": Array [
+          Array [
+            "1234",
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": Promise {},
+          },
+        ],
+      },
+    },
+    "id": "1234",
+    "name": "Folder1",
+    "type": "folder",
+  },
+  File {
+    "connection": Object {
+      "list_all_files": [MockFunction] {
+        "calls": Array [
+          Array [
+            "1234",
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": Promise {},
+          },
+        ],
+      },
+    },
+    "id": "4321",
+    "name": "File1",
+    "type": "file",
+  },
+]
+`;
+
+exports[`folder list_files when operation is unsuccessfull rejects with the error 1`] = `"Google it"`;
+
+exports[`folder retrieve_info when the folder is not trashed and has multiple parents sets parents array to all parent files 1`] = `
+Array [
+  Folder {
+    "connection": Object {
+      "get_folder_info": [MockFunction] {
+        "calls": Array [
+          Array [
+            "1234",
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": Promise {},
+          },
+        ],
+      },
+    },
+    "id": 4444,
+    "type": "folder",
+  },
+  Folder {
+    "connection": Object {
+      "get_folder_info": [MockFunction] {
+        "calls": Array [
+          Array [
+            "1234",
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": Promise {},
+          },
+        ],
+      },
+    },
+    "id": 5555,
+    "type": "folder",
+  },
+]
+`;
+
+exports[`folder retrieve_info when the operation is unsuccessfull adds expected name to the folder object 1`] = `"Bing it"`;

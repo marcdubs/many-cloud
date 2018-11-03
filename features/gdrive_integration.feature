@@ -5,7 +5,7 @@ Feature: Google Drive Functions
         And I connect to the demo google account
 
     Scenario: List files with page size of 1
-        When I call the function "list_files" on the integration with parameters: "1"
+        When I call the function "list_files" on the integration with parameters: "null,1"
         Then the length of "files" must be 1
 
     Scenario: List files without page size returns 10 files

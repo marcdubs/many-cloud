@@ -95,6 +95,10 @@ Then("the result is undefined", function() {
   assert.equal(this.function_result, undefined);
 });
 
+Then("I save the result as: {string}", function(world_key) {
+  this[world_key] = this.function_result;
+});
+
 Then("the result is null", function() {
   assert.equal(this.function_result, null);
 });
