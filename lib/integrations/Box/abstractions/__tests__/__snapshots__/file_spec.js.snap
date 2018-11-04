@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`file download_to when unsuccessfull rejects with the error 1`] = `"Well'a look what you did done did!"`;

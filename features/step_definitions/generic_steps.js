@@ -12,6 +12,7 @@ const fs = require("fs");
 const assert = require("assert");
 
 const Folder = require("../../lib/abstractions/folder");
+const File = require("../../lib/abstractions/file");
 
 paramaterize = function(string) {
   if (string === "null") {
@@ -33,6 +34,13 @@ Given("I get a folder with id: {string} and save it as: {string}", function(
   world_key
 ) {
   this[world_key] = new Folder(folderID, this.connection);
+});
+
+Given("I get a file with id: {string} and save it as: {string}", function(
+  fileID,
+  world_key
+) {
+  this[world_key] = new File(fileID, this.connection);
 });
 
 When("I call the function {string} on the integration", async function(func) {
@@ -67,6 +75,20 @@ When("I call the function: {string} on saved object: {string}", async function(
 ) {
   this.function_result = await this[world_key][func]();
 });
+
+When(
+  "I call the function: {string} on saved object: {string} with parameters: {string}",
+  async function(func, world_key, params_) {
+    let params = params_.split(",");
+    for (let i = 0; i < params.length; i++) {
+      params[i] = paramaterize(params[i]);
+    }
+    this.function_result = await this[world_key][func].apply(
+      this[world_key],
+      params
+    );
+  }
+);
 
 Then("the length of {string} must be {int}", function(string, int) {
   assert.equal(this.function_result[string].length, int);

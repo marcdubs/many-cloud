@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`item get_name when the name has not already been retrieved when the operation is unsuccessfull rejects with the error 1`] = `"Ask it"`;
+
+exports[`item get_parent when the parent has not already been retrieved when the operation is unsuccessfull rejects with the error 1`] = `"Aol it"`;
+
+exports[`item retrieve_info when the operation is unsuccessfull adds expected name to the folder object 1`] = `"Bing it"`;

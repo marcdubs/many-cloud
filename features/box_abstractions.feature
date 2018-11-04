@@ -33,3 +33,20 @@ Feature: Box File and Folder abstractions
         When I call the function: "get_parent" on saved object: "root"
         Then the result is null
 
+    Scenario: Download file
+        When I get a file with id: "246512849364" and save it as: "to_download"
+        And I call the function: "download_to" on saved object: "to_download" with parameters: "hanzo.png"
+        Then the local file "hanzo.png" exists
+        And delete the local file "hanzo.png"
+
+    Scenario: Get name of file
+        When I get a file with id: "246512849364" and save it as: "other"
+        And I call the function: "get_name" on saved object: "other"
+        Then the result should equal: "hanzo.png"
+
+    Scenario: Get parent of file
+        When I get a file with id: "246512849364" and save it as: "other"
+        And I call the function: "get_parent" on saved object: "other"
+        And I save the result as: "parent"
+        And I call the function: "get_name" on saved object: "parent"
+        Then the result should equal: "All Files"
