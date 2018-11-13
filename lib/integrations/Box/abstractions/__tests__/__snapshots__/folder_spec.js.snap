@@ -47,4 +47,6 @@ Array [
 
 exports[`folder list_files when operation is unsuccessfull rejects with the error 1`] = `"Google it"`;
 
+exports[`folder new_folder when operation is unsuccessfull rejects with the error 1`] = `"Doe Doohickey"`;
+
 exports[`folder upload_file when operation is unsuccessfull rejects with the error 1`] = `"OH MAN IT HAPPENED AGAIN!"`;
