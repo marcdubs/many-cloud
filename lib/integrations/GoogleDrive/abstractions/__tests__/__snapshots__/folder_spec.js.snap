@@ -46,3 +46,5 @@ Array [
 `;
 
 exports[`folder list_files when operation is unsuccessfull rejects with the error 1`] = `"Google it"`;
+
+exports[`folder upload_file when operation is unsuccessfull rejects with the error 1`] = `"OH MAN IT HAPPENED AGAIN!"`;
