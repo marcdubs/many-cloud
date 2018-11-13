@@ -17,13 +17,20 @@ Feature: Google Drive Functions
         Then the length of "files" must be 15
 
     Scenario: Upload a file
-        When I call the function "upload_file" on the integration with parameters: "dummy_files/TestFile.txt"
+        When I call the function "upload_file" on the integration with parameters: "null,dummy_files/TestFile.txt"
         Then the result field: "name" should be: "TestFile.txt"
         And save the result field: "id" as "delete_id"
         And delete the file identified by the world key: "delete_id"
 
+    Scenario: Upload a file to a folder
+        When I call the function "upload_file" on the integration with parameters: "1k1XOAZfa-8UheF39kl2izExwBlzgkwT5,dummy_files/TestFile.txt"
+        And save the result field: "id" as "params"
+        And I call the function "get_file_info" on the integration with parameters saved as world key: "params"
+        Then the length of "parents" must be 1
+        And delete the file identified by the world key: "params"
+
     Scenario: Delete a file
-        When I call the function "upload_file" on the integration with parameters: "dummy_files/TestFile.txt"
+        When I call the function "upload_file" on the integration with parameters: "null,dummy_files/TestFile.txt"
         And save the result field: "id" as "params"
         And I call the function "delete_file" on the integration with parameters saved as world key: "params"
         Then the result is undefined
