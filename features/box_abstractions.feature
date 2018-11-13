@@ -61,3 +61,12 @@ Feature: Box File and Folder abstractions
         And I call the function: "get_name" on saved object: "parent"
         Then the result should equal: "Music Test"
         And delete the file identified by the world key: "delete_id"
+
+    Scenario: Create folder
+        When I get a folder with id: "root" and save it as: "root"
+        And I call the function: "new_folder" on saved object: "root" with parameters: "New Test Folder"
+        And I save the result as: "folder"
+        And save the result field: "id" as "delete_id"
+        And I call the function: "get_name" on saved object: "folder"
+        Then the result should equal: "New Test Folder"
+        And delete the folder identified by the world key: "delete_id"
