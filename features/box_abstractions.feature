@@ -50,3 +50,14 @@ Feature: Box File and Folder abstractions
         And I save the result as: "parent"
         And I call the function: "get_name" on saved object: "parent"
         Then the result should equal: "All Files"
+
+    Scenario: Upload file to folder
+        When I get a folder with id: "41483367730" and save it as: "folder"
+        And I call the function: "upload_file" on saved object: "folder" with parameters: "dummy_files/TestFile.txt"
+        And save the result field: "id" as "delete_id"
+        And I save the result as: "file"
+        And I call the function: "get_parent" on saved object: "file"
+        And I save the result as: "parent"
+        And I call the function: "get_name" on saved object: "parent"
+        Then the result should equal: "Music Test"
+        And delete the file identified by the world key: "delete_id"
