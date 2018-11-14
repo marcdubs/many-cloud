@@ -68,7 +68,6 @@ Feature: Box Integration Functions
     Scenario: Get all folder info
         When I call the function "get_folder_info" on the integration with parameters: "41483367730"
         Then the result field: "name" should be: "Music Test"
-        And the result field: "size" should be: "3515529"
     
     Scenario: Get specific folder info
         When I call the function "get_folder_info" on the integration with parameters: "41483367730,name"

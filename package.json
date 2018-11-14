@@ -4,13 +4,13 @@
   "description": "A Node module for abstracting file management and interfacing with a variety of cloud storages.",
   "main": "index.js",
   "scripts": {
-    "test": "jest -o --watch",
-    "test:nowatch": "jest -o",
-    "test:coverage": "jest --coverage",
-    "test:ci": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "auth_gdrive": "node scripts/auth_gdrive",
-    "auth_box": "node scripts/auth_box",
-    "cukes": "./node_modules/.bin/cucumber-js"
+    "test": "cross-env SAVE_ALL_CREDENTIALS_TO_FILE=true jest -o --watch",
+    "test:nowatch": "cross-env SAVE_ALL_CREDENTIALS_TO_FILE=true jest -o",
+    "test:coverage": "cross-env SAVE_ALL_CREDENTIALS_TO_FILE=true jest --coverage",
+    "test:ci": "cross-env SAVE_ALL_CREDENTIALS_TO_FILE=true jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "auth_gdrive": "cross-env SAVE_ALL_CREDENTIALS_TO_FILE=true node scripts/auth_gdrive",
+    "auth_box": "cross-env SAVE_ALL_CREDENTIALS_TO_FILE=true node scripts/auth_box",
+    "cukes": "cross-env SAVE_ALL_CREDENTIALS_TO_FILE=true ./node_modules/.bin/cucumber-js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
   "homepage": "https://github.com/marcdubs/many-cloud#readme",
   "devDependencies": {
     "coveralls": "^3.0.2",
+    "cross-env": "^5.2.0",
     "cucumber": "^5.0.2",
     "deep-equal": "^1.0.1",
     "express": "^4.16.3",

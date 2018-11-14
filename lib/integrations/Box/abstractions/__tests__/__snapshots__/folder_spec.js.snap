@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`folder list_files when operation is successfull returns an array of correct folders and files 1`] = `
+Array [
+  Folder {
+    "connection": Object {
+      "list_all_files": [MockFunction] {
+        "calls": Array [
+          Array [
+            "1234",
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": Promise {},
+          },
+        ],
+      },
+    },
+    "id": "1234",
+    "name": "Folder1",
+    "type": "folder",
+  },
+  File {
+    "connection": Object {
+      "list_all_files": [MockFunction] {
+        "calls": Array [
+          Array [
+            "1234",
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": Promise {},
+          },
+        ],
+      },
+    },
+    "id": "4321",
+    "name": "File1",
+    "type": "file",
+  },
+]
+`;
+
+exports[`folder list_files when operation is unsuccessfull rejects with the error 1`] = `"Google it"`;
+
+exports[`folder new_folder when operation is unsuccessfull rejects with the error 1`] = `"Doe Doohickey"`;
+
+exports[`folder upload_file when operation is unsuccessfull rejects with the error 1`] = `"OH MAN IT HAPPENED AGAIN!"`;

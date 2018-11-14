@@ -18,7 +18,7 @@ Object {
 }
 `;
 
-exports[`authenticate when provided an access_token and refresh_token without access_token_TTLMS or acquired_at_MS calls getPersistentClient with the expected tokenInfo 1`] = `
+exports[`authenticate when provided an access_token and refresh_token without access_token_TTLMS or acquired_at_MS when save_credentials_to_file is false calls getPersistentClient with the expected tokenInfo 1`] = `
 Object {
   "accessToken": "accessington",
   "accessTokenTTLMS": "timington",
@@ -27,7 +27,7 @@ Object {
 }
 `;
 
-exports[`authenticate when provided an access_token and refresh_token without access_token_TTLMS or acquired_at_MS sets data.credentials.tokens to expected values 1`] = `
+exports[`authenticate when provided an access_token and refresh_token without access_token_TTLMS or acquired_at_MS when save_credentials_to_file is false sets data.credentials.tokens to expected values 1`] = `
 Object {
   "access_token": "accessington",
   "access_token_TTLMS": "timington",
@@ -36,9 +36,7 @@ Object {
 }
 `;
 
-exports[`authenticate when provided an access_token and refresh_token without access_token_TTLMS or acquired_at_MS tokenStore clear calls console.log alerting of the unsupported operation 1`] = `"Tokenstore clear was called. Currently unsupported"`;
-
-exports[`authenticate when provided an access_token and refresh_token without access_token_TTLMS or acquired_at_MS tokenStore read calls the callback with the expected tokenInfo 1`] = `
+exports[`authenticate when provided an access_token and refresh_token without access_token_TTLMS or acquired_at_MS when save_credentials_to_file is true calls getPersistentClient with the expected tokenInfo 1`] = `
 Object {
   "accessToken": "accessington",
   "accessTokenTTLMS": "timington",
@@ -47,7 +45,36 @@ Object {
 }
 `;
 
-exports[`authenticate when provided an authentication_token sets data.credentials.tokens to expected values 1`] = `
+exports[`authenticate when provided an access_token and refresh_token without access_token_TTLMS or acquired_at_MS when save_credentials_to_file is true sets data.credentials.tokens to expected values 1`] = `
+Object {
+  "access_token": "accessington",
+  "access_token_TTLMS": "timington",
+  "acquired_at_MS": "millisecondington",
+  "refresh_token": "refreshington",
+}
+`;
+
+exports[`authenticate when provided an access_token and refresh_token without access_token_TTLMS or acquired_at_MS when save_credentials_to_file is true tokenStore clear calls console.log alerting of the unsupported operation 1`] = `"Tokenstore clear was called. Currently unsupported"`;
+
+exports[`authenticate when provided an access_token and refresh_token without access_token_TTLMS or acquired_at_MS when save_credentials_to_file is true tokenStore read calls the callback with the expected tokenInfo 1`] = `
+Object {
+  "accessToken": "accessington",
+  "accessTokenTTLMS": "timington",
+  "acquiredAtMS": "millisecondington",
+  "refreshToken": "refreshington",
+}
+`;
+
+exports[`authenticate when provided an authentication_token when save_credentials_to_file is false sets data.credentials.tokens to expected values 1`] = `
+Object {
+  "access_token": "accessington",
+  "access_token_TTLMS": "timington",
+  "acquired_at_MS": "millisecondington",
+  "refresh_token": "refreshington",
+}
+`;
+
+exports[`authenticate when provided an authentication_token when save_credentials_to_file is true sets data.credentials.tokens to expected values 1`] = `
 Object {
   "access_token": "accessington",
   "access_token_TTLMS": "timington",
