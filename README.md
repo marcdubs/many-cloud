@@ -2,7 +2,7 @@
   [![Build Status](https://travis-ci.org/marcdubs/many-cloud.svg?branch=master)](https://travis-ci.org/marcdubs/many-cloud)
   [![Coverage Status](https://coveralls.io/repos/github/marcdubs/many-cloud/badge.svg?branch=master)](https://coveralls.io/github/marcdubs/many-cloud?branch=master)
 
-Many Cloud is an open source utility that creates an interface for many cloud platforms found online that abstracts out anything that is specific to every drive.
+Many Cloud is an open source utility that creates an interface for many cloud platforms found online that, after authentication, abstracts out which cloud service you are manipulating for the sake of simplicity.
 
 ## Documentation
 - [Authentication](docs/authentication.md)
