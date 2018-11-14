@@ -31,22 +31,22 @@ let connection = require("many-cloud").integration("GoogleDrive")({
 
 Authenticate the users with whatever integration you are using and then you will have access to the [file](docs/file.md)/[folder](docs/folder.md) Abstractions. Here's an example:
 ```js
-	//Require the folder abstraction
-	const Folder = require("many-cloud/abstractions/folder");
-	
-	//Get the root folder of our connection (to any of the supported drives)
-	let root_folder = new Folder("root", connection);
-	
-	//List the files in the root folder
-	//This will return an array of File and Folder abstractions
-	let file_list = await root_folder.list_files();
-	//Download all of the files in the root folder (but not the folders)
-	for(let i = 0; i < file_list.length; i++) {
-		if(file_list[i].type === 'file') {
-			let name = await file_list[i].get_name();
-			await file_list[i].download_to('some/local/storage/' + name);
-		}
+//Require the folder abstraction
+const Folder = require("many-cloud/abstractions/folder");
+
+//Get the root folder of our connection (to any of the supported drives)
+let root_folder = new Folder("root", connection);
+
+//List the files in the root folder
+//This will return an array of File and Folder abstractions
+let file_list = await root_folder.list_files();
+//Download all of the files in the root folder (but not the folders)
+for(let i = 0; i < file_list.length; i++) {
+	if(file_list[i].type === 'file') {
+		let name = await file_list[i].get_name();
+		await file_list[i].download_to('some/local/storage/' + name);
 	}
+}
 ```
 
 ## Supported Cloud Services
