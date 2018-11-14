@@ -70,3 +70,17 @@ Feature: Box File and Folder abstractions
         And I call the function: "get_name" on saved object: "folder"
         Then the result should equal: "New Test Folder"
         And delete the folder identified by the world key: "delete_id"
+
+    Scenario: Delete a file
+        When I get a folder with id: "root" and save it as: "folder"
+        And I call the function: "upload_file" on saved object: "folder" with parameters: "dummy_files/TestFile.txt"
+        And I save the result as: "file"
+        And I call the function: "delete" on saved object: "file"
+        Then the result is undefined
+        
+    Scenario: Delete a folder
+        When I get a folder with id: "root" and save it as: "root"
+        And I call the function: "new_folder" on saved object: "root" with parameters: "New Test Folder"
+        And I save the result as: "folder"
+        And I call the function: "delete" on saved object: "folder"
+        Then the result is undefined
