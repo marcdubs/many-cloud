@@ -4,14 +4,7 @@
 
 Many Cloud is an open source utility that creates an interface for many cloud platforms found online that abstracts out anything that is specific to every drive.
 
-| Platform | Supported |
-|--|--|
-| ![Google Drive](docs/gdrive.png) | ![Yes](docs/check.png) | 
-| ![Box](docs/box.png) | ![Yes](docs/check.png) | 
-| ![Box](docs/dropbox.png) | ![To do](docs/x.png) | 
-| More to come! | |
-
-### Documentation
+## Documentation
 - [Authentication](docs/authentication.md)
 - [File Abstraction](docs/file.md)
 - [Folder Abstraction](docs/folder.md)
@@ -56,3 +49,10 @@ Authenticate the users with whatever integration you are using and then you will
 	}
 ```
 
+## Supported Cloud Services
+| Platform | Supported |
+|--|--|
+| ![Google Drive](docs/gdrive.png) | ![Yes](docs/check.png) | 
+| ![Box](docs/box.png) | ![Yes](docs/check.png) | 
+| ![Box](docs/dropbox.png) | ![To do](docs/x.png) | 
+| More to come! | |
