@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Box integration credentials connection without providing credentials properties trys to read credentials from the file 1`] = `
+exports[`Box integration credentials connection without providing credentials properties and save_credentials_to_file set to false trys to read credentials from the file 1`] = `
 Array [
   "../../../../credentials/box.json",
 ]
