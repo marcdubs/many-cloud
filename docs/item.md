@@ -1,5 +1,12 @@
 ﻿# Item
-
+- [Introduction](#introduction)
+- [Methods](#methods)
+  * [delete()](#delete)
+  * [get_name()](#get_name)
+  * [get_parent()](#get_parent)
+  * [retrieve_info()](#retrieve_info)
+  
+## Introduction
 Item is one of the three object classes that provides abstraction to what cloud drive you're dealing with. Providing similar functions for all of them.
 
 Both [Folder](folder.md) and [File](file.md) are extensions of Item. Therefore, they both have these functions:
