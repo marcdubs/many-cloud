@@ -1,5 +1,14 @@
 # File
 
+- [Introduction](#introduction)
+- [Constructors](#constructors)
+  * [new File(id, connection)](#new-fileid-connection)
+- [Methods](#methods)
+  * [download_to(path)](#download_topath)
+  * [get_checksum()](#get_checksum)
+
+## Introduction
+
 File is one of the three object classes that provides abstraction to what cloud drive you're dealing with. Providing similar functions for all of them.
 
 File and Folder both import all of the functions inside of [item](item.md).
