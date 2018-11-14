@@ -47,4 +47,5 @@ Returns: Promise that resolves once file is downloaded
 ### get_checksum()
 
 Parameters: None
+
 Returns: Promise that resolves with a checksum (sha1 or md5, etc depending on what the cloud service decided on).
