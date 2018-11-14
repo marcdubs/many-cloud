@@ -1,6 +1,15 @@
 ﻿# Authentication
 Authentication with whatever cloud service(s) you are using is required for any other functionality of many-cloud. The only problem is, we can't abstract out this part of the process as every cloud service has a slightly different way of authenticating. So this document is split up into sections for all supported cloud services.
 
+- [Google Drive](#google-drive)
+  * [Initial Authentication](#initial-authentication)
+  * [Future Authentication](#future-authentication)
+  * [Example](#example)
+- [Box](#box)
+  * [Initial Authentication](#initial-authentication-1)
+  * [Future Authentication](#future-authentication-1)
+  * [Example](#example-1)
+
 ## Google Drive
 
 ### Initial Authentication
