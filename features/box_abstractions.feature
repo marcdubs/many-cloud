@@ -84,3 +84,8 @@ Feature: Box File and Folder abstractions
         And I save the result as: "folder"
         And I call the function: "delete" on saved object: "folder"
         Then the result is undefined
+
+    Scenario: Checksum
+        When I get a file with id: "246512849364" and save it as: "file"
+        And I call the function: "get_checksum" on saved object: "file"
+        Then the result should equal: "7bfe75ea785583e910222e5480950a811ea778ce"
