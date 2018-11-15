@@ -6,8 +6,9 @@ const {
   Then,
   setDefaultTimeout
 } = require("cucumber");
+const fs = require("fs");
 
-let firstTimeGettingCredentials = false;
+let firstTimeGettingCredentials = true;
 
 const _getS3Credentials = () => {
   if (process.env.IS_CI && firstTimeGettingCredentials) {
