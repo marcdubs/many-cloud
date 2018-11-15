@@ -17,3 +17,19 @@ Feature: Amazon S3 Functions
         And the local file "test.txt" exists
         And delete the local file "test.txt"
         And delete the file identified by: "TestFile.txt"
+
+    Scenario: List files
+        When I call the function "upload_file" on the integration with parameters: "null,dummy_files/TestFile.txt"
+        And I call the function "list_files" on the integration
+        Then the length of "Contents" must be 1
+        And delete the file identified by: "TestFile.txt"
+
+    Scenario: List files in "folder"
+        When I call the function "upload_file" on the integration with parameters: "some_folder,dummy_files/TestFile.txt"
+        And I call the function "list_files" on the integration
+        Then the length of "Contents" must be 0
+        And the length of "CommonPrefixes" must be 1
+        And I call the function "list_files" on the integration with parameters: "some_folder"
+        And the length of "Contents" must be 1
+        And the length of "CommonPrefixes" must be 0
+        And delete the file identified by: "some_folder/TestFile.txt"
