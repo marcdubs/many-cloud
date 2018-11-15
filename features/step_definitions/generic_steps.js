@@ -100,6 +100,10 @@ Then("delete the file identified by the world key: {string}", async function(
   await this.connection["delete_file"](this[world_key]);
 });
 
+Then("delete the file identified by: {string}", async function(id) {
+  await this.connection["delete_file"](id);
+});
+
 Then("delete the folder identified by the world key: {string}", async function(
   world_key
 ) {
