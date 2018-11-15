@@ -33,3 +33,11 @@ Feature: Amazon S3 Functions
         And the length of "Contents" must be 1
         And the length of "CommonPrefixes" must be 0
         And delete the file identified by: "some_folder/TestFile.txt"
+
+    Scenario: List all files
+        When I call the function "upload_file" on the integration with parameters: "null,dummy_files/TestFile.txt"
+        And I call the function "upload_file" on the integration with parameters: "null,dummy_files/SecondTestFile.txt"
+        And I call the function "list_all_files" on the integration
+        Then the length of "Contents" must be 2
+        And delete the file identified by: "TestFile.txt"
+        And delete the file identified by: "SecondTestFile.txt"
