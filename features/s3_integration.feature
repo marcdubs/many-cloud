@@ -41,3 +41,9 @@ Feature: Amazon S3 Functions
         Then the length of "Contents" must be 2
         And delete the file identified by: "TestFile.txt"
         And delete the file identified by: "SecondTestFile.txt"
+
+    Scenario: Get file info
+        When I call the function "upload_file" on the integration with parameters: "null,dummy_files/TestFile.txt"
+        And I call the function "get_file_info" on the integration with parameters: "TestFile.txt"
+        Then the result field: "ETag" should be: "\"b10a8db164e0754105b7a99be72e3fe5\""
+        And delete the file identified by: "TestFile.txt"
