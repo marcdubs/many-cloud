@@ -47,3 +47,17 @@ Feature: Amazon S3 Functions
         And I call the function "get_file_info" on the integration with parameters: "TestFile.txt"
         Then the result field: "ETag" should be: "\"b10a8db164e0754105b7a99be72e3fe5\""
         And delete the file identified by: "TestFile.txt"
+
+    Scenario: List all files in folder
+        When I call the function "upload_file" on the integration with parameters: "some_folder,dummy_files/TestFile.txt"
+        And I call the function "upload_file" on the integration with parameters: "null,dummy_files/SecondTestFile.txt"
+        And I call the function "upload_file" on the integration with parameters: "some_folder,dummy_files/SecondTestFile.txt"
+        And I call the function "list_all_files" on the integration
+        Then the length of "Contents" must be 1
+        And the length of "CommonPrefixes" must be 1
+        And I call the function "list_all_files" on the integration with parameters: "some_folder"
+        Then the length of "Contents" must be 2
+        And the length of "CommonPrefixes" must be 0
+        And delete the file identified by: "SecondTestFile.txt"
+        And delete the file identified by: "some_folder/TestFile.txt"
+        And delete the file identified by: "some_folder/SecondTestFile.txt"
