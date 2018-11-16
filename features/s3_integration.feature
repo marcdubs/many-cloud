@@ -61,3 +61,12 @@ Feature: Amazon S3 Functions
         And delete the file identified by: "SecondTestFile.txt"
         And delete the file identified by: "some_folder/TestFile.txt"
         And delete the file identified by: "some_folder/SecondTestFile.txt"
+
+    Scenario: Delete a folder
+        When I call the function "upload_file" on the integration with parameters: "some_folder,dummy_files/TestFile.txt"
+        And I call the function "upload_file" on the integration with parameters: "some_folder/lots/of/recursive/folders,dummy_files/TestFile.txt"
+        And I call the function "delete_folder" on the integration with parameters: "some_folder"
+        Then the result is undefined
+        And I call the function "list_all_files" on the integration
+        Then the length of "Contents" must be 0
+        And the length of "CommonPrefixes" must be 0    
