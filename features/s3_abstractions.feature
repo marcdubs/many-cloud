@@ -34,7 +34,7 @@ Feature: S3 File and Folder abstractions
         And delete the local file "test.txt"
         And delete the file identified by: "some_folder/TestFile.txt"
 
-    Scenario: Upload file to a folder
+    Scenario: Upload file to a folder and check parents
         When I get a folder with id: "a" and save it as: "folder"
         And I call the function: "upload_file" on saved object: "folder" with parameters: "dummy_files/TestFile.txt"
         And I save the result as: "file"
