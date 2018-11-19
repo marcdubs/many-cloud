@@ -29,7 +29,7 @@ Along with all the functions of [item](item.md), file also has these functions:
 
 Parameters:
 | Name | Type | Description |
-| -- | -- | -- |
+|--|--|--|
 | id | String | A file ID |
 | connection | Object | A connection to an integration |
 
