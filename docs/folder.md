@@ -26,7 +26,8 @@ Along with all the functions of [item](item.md), folder also has these functions
 
 ### new Folder(id, connection)
 
-Parameters:
+Parameters
+
 | Name | Type | Description |
 | -- | -- | -- |
 | id | String | A Folder ID. "root" for root folder. |
@@ -45,6 +46,7 @@ Returns: Promise A promise that resolves with a list of files
 Upload a local file to this folder.
 
 Parameters:
+
 | Name | Type | Description |
 | -- | -- | -- |
 | path | String | Path to local file to upload |
@@ -55,6 +57,7 @@ Returns: Promise that returns a file object when resolved
 Creates a new folder inside of this folder.
 
 Parameters:
+
 | Name | Type | Description |
 | -- | -- | -- |
 | name| String | Name of folder to create |
