@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`list_all_files when listObject throws an error the second time it is called returns with the error 1`] = `"OH BOTHER!"`;
+
+exports[`list_all_files when not provided a folderID returns the expected contents 1`] = `
+Array [
+  "Thing1",
+  "Thing2",
+]
+`;
+
+exports[`list_all_files when provided a folderID calls data.s3.listObjects with the folder as the key prefix 1`] = `
+Array [
+  Array [
+    Object {
+      "Bucket": undefined,
+      "Delimiter": "/",
+      "Marker": "WASUP",
+      "Prefix": "folder/",
+    },
+    [Function],
+  ],
+  Array [
+    Object {
+      "Bucket": undefined,
+      "Delimiter": "/",
+      "Marker": "WASUP",
+      "Prefix": "folder/",
+    },
+    [Function],
+  ],
+]
+`;
+
+exports[`list_all_files when provided a folderID returns the expected contents 1`] = `
+Array [
+  "Thing1",
+  "Thing2",
+]
+`;

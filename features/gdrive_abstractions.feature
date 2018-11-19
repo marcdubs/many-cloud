@@ -1,4 +1,4 @@
-Feature: Box File and Folder abstractions
+Feature: Google Drive File and Folder abstractions
 
     Background:
         Given I create a "GoogleDrive" integration

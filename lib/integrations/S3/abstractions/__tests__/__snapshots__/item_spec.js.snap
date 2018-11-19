@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`item delete when the operation is unsuccessfull rejects with the error 1`] = `"Oh bother!"`;
+
+exports[`item get_parent when the parent has not already been retrieved when the operation is unsuccessfull rejects with the error 1`] = `"Aol it"`;
+
+exports[`item retrieve_info when everything happens successfully when this is a file when get_file_info rejects with something other than NotFound rejects with the error 1`] = `
+Object {
+  "code": "OhNo!",
+}
+`;
+
+exports[`item retrieve_info when everything happens successfully when this is a file when the file is found sets the parent to the expected parent folder 1`] = `
+Folder {
+  "connection": Object {
+    "get_file_info": [MockFunction] {
+      "calls": Array [
+        Array [
+          "parent_folder/a_file.txt",
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": Promise {},
+        },
+      ],
+    },
+  },
+  "id": "parent_folder",
+  "name": "parent_folder",
+  "type": "folder",
+}
+`;
+
+exports[`item retrieve_info when everything happens successfully when this is a file when the file is not found sets the parent to the expected parent folder 1`] = `
+Folder {
+  "connection": Object {
+    "get_file_info": [MockFunction] {
+      "calls": Array [
+        Array [
+          "parent_folder/a_file.txt",
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": Promise {},
+        },
+      ],
+    },
+  },
+  "id": "parent_folder",
+  "name": "parent_folder",
+  "type": "folder",
+}
+`;
+
+exports[`item retrieve_info when everything happens successfully when this is a folder when this folder is inside the root folder sets the parent to the Root folder 1`] = `
+Folder {
+  "connection": null,
+  "id": "",
+  "name": "Root",
+  "type": "folder",
+}
+`;
+
+exports[`item retrieve_info when everything happens successfully when this is a folder when this is a second-level folder sets the parent to the expected parent folder 1`] = `
+Folder {
+  "connection": null,
+  "id": "parent_folder",
+  "name": "parent_folder",
+  "type": "folder",
+}
+`;

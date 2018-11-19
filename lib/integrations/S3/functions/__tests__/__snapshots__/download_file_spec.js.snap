@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`download_file when fs.writeFile returns an error rejects with the error 1`] = `"It's a lot of bad things That they wishin' and wishin' and wishin' and wishin' They wishin' on me Yuh, ayy, ayy"`;
+
+exports[`download_file when getObject returns an error rejects with the error 1`] = `"You Done Messed Up A-Aron!"`;
