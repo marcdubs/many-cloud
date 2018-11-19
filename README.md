@@ -1,6 +1,8 @@
 ﻿# Many Cloud
+ 
   [![Build Status](https://travis-ci.org/marcdubs/many-cloud.svg?branch=master)](https://travis-ci.org/marcdubs/many-cloud)
   [![Coverage Status](https://coveralls.io/repos/github/marcdubs/many-cloud/badge.svg?branch=master)](https://coveralls.io/github/marcdubs/many-cloud?branch=master)
+  [![npm version](https://badge.fury.io/js/many-cloud.svg)](https://badge.fury.io/js/many-cloud)
 
 Many Cloud is an open source utility that creates an interface for many cloud platforms found online that, after authentication, abstracts out which cloud service you are manipulating for the sake of simplicity.
 
