@@ -1,6 +1,6 @@
 {
   "name": "many-cloud",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Node module for abstracting file management and interfacing with a variety of cloud storages.",
   "main": "index.js",
   "scripts": {
