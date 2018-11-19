@@ -28,6 +28,7 @@ Along with all the functions of [item](item.md), file also has these functions:
 ### new File(id, connection)
 
 Parameters:
+
 | Name | Type | Description |
 |--|--|--|
 | id | String | A file ID |
@@ -38,6 +39,7 @@ Parameters:
 ### download_to(path)
 
 Parameters:
+
 | Name | Type | Description |
 | -- | -- | -- |
 | path | String | Path to destination |
