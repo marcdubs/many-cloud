@@ -9,6 +9,8 @@ Authentication with whatever cloud service(s) you are using is required for any 
   * [Initial Authentication](#initial-authentication-1)
   * [Future Authentication](#future-authentication-1)
   * [Example](#example-1)
+- [S3](#s3)
+  * [All Authentication](#all-authentication)
 
 ## Google Drive
 
@@ -111,3 +113,15 @@ But make sure that just like the initial authentication, you save these with wha
 See [scripts/auth_box.js](../scripts/auth_box.js) for an example of initial authentication.
 
 
+## S3
+
+### All Authentication
+After you get your **accessKeyId** and **secretAccessKey** ([info on that here](https://aws.amazon.com/premiumsupport/knowledge-center/create-access-key/)), and a [bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) setup, the code to connect to a bucket is the same every single time:
+```js
+let connection = await require("many-cloud").integration("S3")({
+	accessKeyId: ACCESS_KEY_ID
+	secretAccessKey: SECRET_ACCESS_KEY,
+	bucket: NAME_OF_BUCKET
+});
+```
+There is no need to re-store your access keys every time as they never change unless you change them in your account settings.
