@@ -39,6 +39,12 @@ And now the authUrl variable is the URI that you should have your users' open to
 With that authentication token, you can retrieve an [access](https://www.oauth.com/oauth2-servers/access-tokens/access-token-response/) and [refresh token](https://www.oauth.com/oauth2-servers/access-tokens/refreshing-access-tokens/) like so:
 ```js
 let connection = await require("many-cloud").integration("GoogleDrive")({
+	credentials: {
+		installed: {
+			client_id: CLIENT_ID,
+			client_secret: CLIENT_SECRET
+		}
+	},
 	authentication_token:  AUTHENTICATION_TOKEN,
 	redirect_uri: REDIRECT_URI
 });
@@ -58,6 +64,12 @@ You'll want to save all of these values somewhere **AFTER** you are done with an
 Once you're done with the initial authentication, you'll have the access_token, refresh_token, expiry_date, and token_type saved somewhere. To authenticate a connection at this point you would do this:
 ```js
 let connection = await require("many-cloud").integration("GoogleDrive")({
+	credentials: {
+		installed: {
+			client_id: CLIENT_ID,
+			client_secret: CLIENT_SECRET
+		}
+	},
 	access_token: ACCESS_TOKEN,
 	refresh_token: REFRESH_TOKEN,
 	expiry_date: EXPIRY_DATE,
@@ -82,6 +94,12 @@ At wherever that REDIRECT_URI points to, you'll receive a response with an [auth
 With that authentication token, you can retrieve an [access](https://www.oauth.com/oauth2-servers/access-tokens/access-token-response/) and [refresh token](https://www.oauth.com/oauth2-servers/access-tokens/refreshing-access-tokens/) like so:
 ```js
 let connection = await require("many-cloud").integration("Box")({
+	credentials: {
+		installed: {
+			client_id: CLIENT_ID,
+			client_secret: CLIENT_SECRET
+		}
+	},
 	authentication_token:  AUTHENTICATION_TOKEN
 });
 ```
@@ -100,6 +118,12 @@ You'll want to save all of these values somewhere **AFTER** you are done with an
 Once you're done with the initial authentication, you'll have the access_token, refresh_token, acquired_at_MS, and access_token_TTLMS saved somewhere. To authenticate a connection at this point you would do this:
 ```js
 let connection = await require("many-cloud").integration("Box")({
+	credentials: {
+		installed: {
+			client_id: CLIENT_ID,
+			client_secret: CLIENT_SECRET
+		}
+	},
 	access_token: ACCESS_TOKEN,
 	refresh_token: REFRESH_TOKEN,
 	access_token_TTLMS: ACCESS_TOKEN_TTLMS,
