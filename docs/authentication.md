@@ -31,7 +31,8 @@ const oAuth2Client =  new google.auth.OAuth2(
 
 const authUrl = oAuth2Client.generateAuthUrl({
 	access_type: "offline",
-	scope: ["https://www.googleapis.com/auth/drive"]
+	scope: ["https://www.googleapis.com/auth/drive"],
+	prompt: "consent"
 });
 ```
 And now the authUrl variable is the URI that you should have your users' open to authenticate. And whatever your **REDIRECT_URI** is will receive a response with an [authentication token](https://www.oauth.com/oauth2-servers/access-tokens/authorization-code-request/).
