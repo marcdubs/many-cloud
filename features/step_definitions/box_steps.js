@@ -39,7 +39,12 @@ const _getBoxCredentials = async function() {
     };
     fs.writeFileSync("./credentials/box.json", JSON.stringify(creds), "utf8");
   }
-  return require("../../credentials/box.json");
+
+  let file = fs.readFileSync("./credentials/box.json", "utf8");
+  if (!file) {
+    return undefined;
+  }
+  return JSON.parse(file);
 };
 
 BeforeAll(async function() {
