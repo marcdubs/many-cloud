@@ -15,6 +15,12 @@ exports[`GoogleDrive integration function delete_file rejects with no parameter 
 
 exports[`GoogleDrive integration function list_all_files when google drive api returns an error function rejects 1`] = `"super fancy error from google"`;
 
+exports[`GoogleDrive integration function list_all_files when list_files returns a list of 0 files function resolves with an array of length 0 1`] = `
+Object {
+  "files": Array [],
+}
+`;
+
 exports[`GoogleDrive integration function list_files next page token rejects if invalid 1`] = `"Invalid Value"`;
 
 exports[`GoogleDrive integration function list_files page size rejects if negative 1`] = `"Invalid value '-5'. Values must be within the range: [1, 1000]"`;

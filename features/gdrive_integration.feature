@@ -14,7 +14,7 @@ Feature: Google Drive Functions
 
     Scenario: List all files returns a list of all the 15 files
         When I call the function "list_all_files" on the integration
-        Then the length of "files" must be 15
+        Then the length of "files" must be 16
 
     Scenario: Upload a file
         When I call the function "upload_file" on the integration with parameters: "null,dummy_files/TestFile.txt"

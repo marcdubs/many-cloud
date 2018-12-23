@@ -7,7 +7,7 @@ Feature: Google Drive File and Folder abstractions
 
     Scenario: List files in root folder
         When I call the function: "list_files" on saved object: "root"
-        Then the length of the result must be: 3
+        Then the length of the result must be: 4
 
     Scenario: List files in other folder
         When I get a folder with id: "1KzP53T2FlYz9jfIiBzp4PH0vel4XZvOA" and save it as: "other"
@@ -90,3 +90,8 @@ Feature: Google Drive File and Folder abstractions
         When I get a file with id: "1RpxzKzzjDH57n3Vs-RroFf-U_dT_gPtW" and save it as: "file"
         And I call the function: "get_checksum" on saved object: "file"
         Then the result should equal: "3dc4c9a487c4d5595445858f5af289b9"
+
+    Scenario: List all files in an empty folder
+        When I get a folder with id: "1WChbjKaZ6odGYIg_cm6XB7LO6sdh3vgQ" and save it as: "empty_folder"
+        And I call the function: "list_files" on saved object: "empty_folder"
+        Then the length of the result must be: 0
