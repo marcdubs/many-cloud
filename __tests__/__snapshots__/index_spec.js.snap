@@ -1,5 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` 1`] = `"Missing name argument."`;
+exports[`Index abstraction when argument is not an abstraction throws an error 1`] = `"Abstraction \\"not_an_abstraction\\" not found."`;
 
-exports[` 2`] = `"Integration \\"not_an_integration\\" not found."`;
+exports[`Index abstraction when missing argument throws an error 1`] = `"Missing abstraction argument"`;
+
+exports[`Index integration when argument is missing throws an error 1`] = `"Missing name argument."`;
+
+exports[`Index integration when integration is unknown throws an error 1`] = `"Integration \\"not_an_integration\\" not found."`;
