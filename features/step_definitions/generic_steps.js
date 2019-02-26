@@ -11,8 +11,8 @@ const fs = require("fs");
 
 const assert = require("assert");
 
-const Folder = require("../../lib/abstractions/folder");
-const File = require("../../lib/abstractions/file");
+const Folder = require("../../").abstraction("Folder");
+const File = require("../../").abstraction("File");
 
 paramaterize = function(string) {
   if (string === "null") {

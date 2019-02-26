@@ -15,7 +15,7 @@ File and Folder both import all of the functions inside of [item](item.md).
 
 After you establish a connection to any integration as described in the [authentication](authentication.md) documentation, you can create a file like so:
 ```js
-const File = require("many-cloud/lib/abstractions/file");
+const File = require("many-cloud").abstraction("File");
 
 //Create a File object with an ID and a drive connection.
 let file = new File("some-file-id", connection);

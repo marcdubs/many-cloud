@@ -36,16 +36,54 @@ describe("Index", () => {
         });
     });
 
-    describe("missing argument", () => {
-      expect(() => {
-        app.integration();
-      }).toThrowErrorMatchingSnapshot();
+    describe("when argument is missing", () => {
+      it("throws an error", () => {
+        expect(() => {
+          app.integration();
+        }).toThrowErrorMatchingSnapshot();
+      });
     });
 
-    describe("unknown integration", () => {
-      expect(() => {
-        app.integration("not_an_integration");
-      }).toThrowErrorMatchingSnapshot();
+    describe("when integration is unknown", () => {
+      it("throws an error", () => {
+        expect(() => {
+          app.integration("not_an_integration");
+        }).toThrowErrorMatchingSnapshot();
+      });
+    });
+  });
+
+  describe("abstraction", () => {
+    describe("when argument is folder", () => {
+      it("returns the folder abstraction", () => {
+        expect(app.abstraction("folder")).toEqual(
+          require("../lib/abstractions/folder")
+        );
+      });
+    });
+
+    describe("when argument is file", () => {
+      it("returns the file abstraction", () => {
+        expect(app.abstraction("file")).toEqual(
+          require("../lib/abstractions/file")
+        );
+      });
+    });
+
+    describe("when missing argument", () => {
+      it("throws an error", () => {
+        expect(() => {
+          app.abstraction();
+        }).toThrowErrorMatchingSnapshot();
+      });
+    });
+
+    describe("when argument is not an abstraction", () => {
+      it("throws an error", () => {
+        expect(() => {
+          app.abstraction("not_an_abstraction");
+        }).toThrowErrorMatchingSnapshot();
+      });
     });
   });
 });
