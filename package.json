@@ -32,11 +32,11 @@
   "devDependencies": {
     "coveralls": "^3.0.2",
     "cross-env": "^5.2.0",
-    "cucumber": "^5.0.2",
+    "cucumber": "^5.1.0",
     "deep-equal": "^1.0.1",
     "express": "^4.16.3",
     "get-port": "^3.2.0",
-    "jest": "^23.3.0",
+    "jest": "^24.1.0",
     "opn": "^5.3.0",
     "prettier": "1.13.5"
   },
