@@ -144,7 +144,7 @@ See [scripts/auth_box.js](../scripts/auth_box.js) for an example of initial auth
 After you get your **accessKeyId** and **secretAccessKey** ([info on that here](https://aws.amazon.com/premiumsupport/knowledge-center/create-access-key/)), and a [bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) setup, the code to connect to a bucket is the same every single time:
 ```js
 let connection = await require("many-cloud").integration("S3")({
-	accessKeyId: ACCESS_KEY_ID
+	accessKeyId: ACCESS_KEY_ID,
 	secretAccessKey: SECRET_ACCESS_KEY,
 	bucket: NAME_OF_BUCKET,
 	region: AWS_REGION_IDENTIFIER
