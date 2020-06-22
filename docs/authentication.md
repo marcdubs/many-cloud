@@ -146,7 +146,8 @@ After you get your **accessKeyId** and **secretAccessKey** ([info on that here](
 let connection = await require("many-cloud").integration("S3")({
 	accessKeyId: ACCESS_KEY_ID
 	secretAccessKey: SECRET_ACCESS_KEY,
-	bucket: NAME_OF_BUCKET
+	bucket: NAME_OF_BUCKET,
+	region: AWS_REGION_IDENTIFIER
 });
 ```
 There is no need to re-store your access keys every time as they never change unless you change them in your account settings.
