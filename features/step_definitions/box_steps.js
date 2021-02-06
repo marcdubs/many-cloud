@@ -4,38 +4,69 @@ const {
   Given,
   When,
   Then,
-  setDefaultTimeout
+  setDefaultTimeout,
 } = require("cucumber");
 const deep_equal = require("deep-equal");
 const assert = require("assert");
 
 let firstTimeGettingCredentials = true;
 const fs = require("fs");
-const fetch = require("node-fetch");
 
 setDefaultTimeout(30000);
 
+const mongoose = require("mongoose");
+
+const _get_ref_token = async function() {
+  mongoose.Promise = require("bluebird");
+  await mongoose.connect(process.env.CREDS_MONGODB_URI);
+
+  const creds_schema = mongoose.Schema({
+    name: String,
+    token: String,
+  });
+
+  const creds = mongoose.model("creds", creds_schema);
+
+  const token = (await creds.findOne({ name: "Box" })).token;
+
+  await mongoose.connection.close();
+
+  return token;
+};
+
+const _set_ref_token = async function(token) {
+  mongoose.Promise = require("bluebird");
+  await mongoose.connect(process.env.CREDS_MONGODB_URI);
+
+  const creds_schema = mongoose.Schema({
+    name: String,
+    token: String,
+  });
+
+  const creds = mongoose.model("creds", creds_schema);
+
+  const cred = await creds.findOne({ name: "Box" });
+
+  cred.token = token;
+  await cred.save();
+
+  await mongoose.connection.close();
+};
+
 const _getBoxCredentials = async function() {
   if (process.env.IS_CI && firstTimeGettingCredentials) {
-    let ref_ = await fetch(process.env.CI_CREDS_URI + "get_ref_token", {
-      method: "POST",
-      body: JSON.stringify({
-        t: process.env.CREDS_REQ_TOKEN
-      }),
-      headers: { "Content-Type": "application/json" }
-    });
-    let ref = await ref_.json();
+    let ref = await _get_ref_token();
 
     firstTimeGettingCredentials = false;
     const creds = {
       installed: {
         client_id: process.env.CI_BOX_CLIENT_ID,
-        client_secret: process.env.CI_BOX_CLIENT_SECRET
+        client_secret: process.env.CI_BOX_CLIENT_SECRET,
       },
       tokens: {
         access_token: "toget",
-        refresh_token: ref
-      }
+        refresh_token: ref,
+      },
     };
     fs.writeFileSync("./credentials/box.json", JSON.stringify(creds), "utf8");
   }
@@ -54,14 +85,7 @@ BeforeAll(async function() {
 AfterAll(async function() {
   if (process.env.IS_CI) {
     let creds = await _getBoxCredentials();
-    await fetch(process.env.CI_CREDS_URI + "set_ref_token", {
-      method: "POST",
-      body: JSON.stringify({
-        t: process.env.CREDS_REQ_TOKEN,
-        new_token: creds.tokens.refresh_token
-      }),
-      headers: { "Content-Type": "application/json" }
-    });
+    await _set_ref_token(creds.tokens.refresh_token);
   }
 });
 
