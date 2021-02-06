@@ -10,7 +10,7 @@ Feature: Box File and Folder abstractions
         Then the length of the result must be: 3
 
     Scenario: List files in other folder
-        When I get a folder with id: "41483367730" and save it as: "other"
+        When I get a folder with id: "131117008784" and save it as: "other"
         And I call the function: "list_files" on saved object: "other"
         Then the length of the result must be: 4
 
@@ -19,12 +19,12 @@ Feature: Box File and Folder abstractions
         Then the result should equal: "All Files"
 
     Scenario: Get name of other folder
-        When I get a folder with id: "41483367730" and save it as: "other"
+        When I get a folder with id: "131117008784" and save it as: "other"
         And I call the function: "get_name" on saved object: "other"
         Then the result should equal: "Music Test"
 
     Scenario: Get parent of other folder
-        When I get a folder with id: "41483367730" and save it as: "other"
+        When I get a folder with id: "131117008784" and save it as: "other"
         And I call the function: "get_parent" on saved object: "other"
         Then the result field: "name" should be: "All Files"
         And the result field: "id" should be: "0"
@@ -34,25 +34,25 @@ Feature: Box File and Folder abstractions
         Then the result is null
 
     Scenario: Download file
-        When I get a file with id: "246512849364" and save it as: "to_download"
+        When I get a file with id: "772972414427" and save it as: "to_download"
         And I call the function: "download_to" on saved object: "to_download" with parameters: "hanzo.png"
         Then the local file "hanzo.png" exists
         And delete the local file "hanzo.png"
 
     Scenario: Get name of file
-        When I get a file with id: "246512849364" and save it as: "other"
+        When I get a file with id: "772972414427" and save it as: "other"
         And I call the function: "get_name" on saved object: "other"
         Then the result should equal: "hanzo.png"
 
     Scenario: Get parent of file
-        When I get a file with id: "246512849364" and save it as: "other"
+        When I get a file with id: "772972414427" and save it as: "other"
         And I call the function: "get_parent" on saved object: "other"
         And I save the result as: "parent"
         And I call the function: "get_name" on saved object: "parent"
         Then the result should equal: "All Files"
 
     Scenario: Upload file to folder
-        When I get a folder with id: "41483367730" and save it as: "folder"
+        When I get a folder with id: "131117008784" and save it as: "folder"
         And I call the function: "upload_file" on saved object: "folder" with parameters: "dummy_files/TestFile.txt"
         And save the result field: "id" as "delete_id"
         And I save the result as: "file"
@@ -86,6 +86,6 @@ Feature: Box File and Folder abstractions
         Then the result is undefined
 
     Scenario: Checksum
-        When I get a file with id: "246512849364" and save it as: "file"
+        When I get a file with id: "772972414427" and save it as: "file"
         And I call the function: "get_checksum" on saved object: "file"
         Then the result should equal: "7bfe75ea785583e910222e5480950a811ea778ce"
