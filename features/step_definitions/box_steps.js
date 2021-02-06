@@ -15,17 +15,17 @@ const fs = require("fs");
 setDefaultTimeout(30000);
 
 const mongoose = require("mongoose");
+mongoose.Promise = require("bluebird");
+
+const creds_schema = mongoose.Schema({
+  name: String,
+  token: String,
+});
+
+const creds = mongoose.model("creds", creds_schema);
 
 const _get_ref_token = async function() {
-  mongoose.Promise = require("bluebird");
   await mongoose.connect(process.env.CREDS_MONGODB_URI);
-
-  const creds_schema = mongoose.Schema({
-    name: String,
-    token: String,
-  });
-
-  const creds = mongoose.model("creds", creds_schema);
 
   const token = (await creds.findOne({ name: "Box" })).token;
 
@@ -35,15 +35,7 @@ const _get_ref_token = async function() {
 };
 
 const _set_ref_token = async function(token) {
-  mongoose.Promise = require("bluebird");
   await mongoose.connect(process.env.CREDS_MONGODB_URI);
-
-  const creds_schema = mongoose.Schema({
-    name: String,
-    token: String,
-  });
-
-  const creds = mongoose.model("creds", creds_schema);
 
   const cred = await creds.findOne({ name: "Box" });
 

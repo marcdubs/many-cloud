@@ -1,4 +1,5 @@
 module.exports = {
   testURL: "http://localhost",
-  bail: true
+  bail: true,
+  testEnvironment: "node",
 };
