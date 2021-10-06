@@ -1,6 +1,6 @@
 ﻿# Many-Cloud
  
-  [![Build Status](https://travis-ci.org/marcdubs/many-cloud.svg?branch=master)](https://travis-ci.org/marcdubs/many-cloud)
+  [![Build Status](https://travis-ci.com/marcdubs/many-cloud.svg?branch=master)](https://travis-ci.com/marcdubs/many-cloud)
   [![Coverage Status](https://coveralls.io/repos/github/marcdubs/many-cloud/badge.svg?branch=master)](https://coveralls.io/github/marcdubs/many-cloud?branch=master)
   [![npm version](https://badge.fury.io/js/many-cloud.svg)](https://badge.fury.io/js/many-cloud)
 
