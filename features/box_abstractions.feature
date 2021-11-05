@@ -26,8 +26,9 @@ Feature: Box File and Folder abstractions
     Scenario: Get parent of other folder
         When I get a folder with id: "131117008784" and save it as: "other"
         And I call the function: "get_parent" on saved object: "other"
-        Then the result field: "name" should be: "All Files"
-        And the result field: "id" should be: "0"
+        And I save the result as: "parent"
+        And I call the function: "get_name" on saved object: "parent"
+        Then the result should equal: "All Files"
 
     Scenario: Get parent of root folder
         When I call the function: "get_parent" on saved object: "root"
