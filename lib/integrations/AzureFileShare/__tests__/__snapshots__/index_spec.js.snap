@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Azure File Share without any parameters throws an error 1`] = `"No way to connect to Azure File Share provided. Need account + accountKey + shareURL."`;

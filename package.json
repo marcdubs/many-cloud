@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/marcdubs/many-cloud#readme",
   "devDependencies": {
+    "@types/jest": "^27.0.3",
     "bluebird": "^3.7.2",
     "coveralls": "^3.0.2",
     "cross-env": "^5.2.0",
@@ -43,6 +44,7 @@
     "prettier": "1.13.5"
   },
   "dependencies": {
+    "@azure/storage-file-share": "^12.8.0",
     "aws-sdk": "^2.356.0",
     "box-node-sdk": "^2.0.0",
     "googleapis": "51.0.0",
