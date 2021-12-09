@@ -9,7 +9,7 @@ Array [
   },
   Object {
     "id": "/testFile.txt",
-    "type": "folder",
+    "type": "file",
     "url": "https://not-microsoft.com/myShare/testFile.txt",
   },
 ]
