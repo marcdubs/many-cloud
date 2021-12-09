@@ -41,7 +41,8 @@
     "jest": "^24.1.0",
     "mongoose": "^5.11.15",
     "opn": "^5.3.0",
-    "prettier": "1.13.5"
+    "prettier": "1.13.5",
+    "tmp": "^0.2.1"
   },
   "dependencies": {
     "@azure/storage-file-share": "^12.8.0",
