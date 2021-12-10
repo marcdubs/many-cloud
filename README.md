@@ -54,8 +54,8 @@ for(let i = 0; i < file_list.length; i++) {
 ## Supported Cloud Services
 | Platform | Supported |
 |--|--|
-| ![Google Drive](docs/gdrive.png) | ![Yes](docs/check.png) | 
-| ![Box](docs/box.png) | ![Yes](docs/check.png) | 
+| ![Google Drive](docs/gdrive.png) | ![Yes](docs/check.png) |
+| ![Box](docs/box.png) | ![Yes](docs/check.png) |
 | ![S3](docs/s3.png) | ![Yes](docs/check.png) |
-| ![Dropbox](docs/dropbox.png) | ![To do](docs/x.png) |
+| Azure File Share | ![To do](docs/check.png) |
 | More to come! | |

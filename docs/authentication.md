@@ -11,6 +11,8 @@ Authentication with whatever cloud service(s) you are using is required for any 
   * [Example](#example-1)
 - [S3](#s3)
   * [All Authentication](#all-authentication)
+- [Azure File Share](#azure-file-share)
+	* [All Authentication](#all-authenticatio)
 
 ## Google Drive
 
@@ -151,3 +153,15 @@ let connection = await require("many-cloud").integration("S3")({
 });
 ```
 There is no need to re-store your access keys every time as they never change unless you change them in your account settings.
+
+## Azure File Share
+
+### All Authentication
+Get your **Storage account name** and **Key** from your storage account's access keys page (Under Security + Networking). Then, open the file share you want to connect to and go to "Properties" and get your share's **URL**
+```js
+let connection = await require("many-cloud").integration("AzureFileShare")({
+	account: STORAGE_ACCOUNT_NAME,
+	accountKey: STORAGE_ACCOUNT_KEY,
+	shareURL: AZURE_SHARE_URL
+});
+```
