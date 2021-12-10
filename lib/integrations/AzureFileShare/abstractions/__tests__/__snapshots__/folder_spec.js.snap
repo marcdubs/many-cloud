@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Azure File Storage Folder list_files gives you a list of files and folders 1`] = `
+Array [
+  Object {
+    "id": "/testDirectory",
+    "type": "folder",
+    "url": "https://not-microsoft.com/myShare/testDirectory",
+  },
+  Object {
+    "id": "/testFile.txt",
+    "type": "file",
+    "url": "https://not-microsoft.com/myShare/testFile.txt",
+  },
+]
+`;
