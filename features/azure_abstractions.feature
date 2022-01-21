@@ -70,3 +70,12 @@ Feature: Azure File Share Abstractions
         And I call the function: "get_checksum" on saved object: "file"
         Then the result should equal: "b10a8db164e0754105b7a99be72e3fe5"
         And delete the file identified by: "TestFile.txt"
+
+    Scenario: Auto-Create folder paths
+        When I get a folder with id: "subdir" and save it as: "subdir"
+        And I call the function: "upload_file" on saved object: "subdir" with parameters: "dummy_files/TestFile.txt"
+        And I save the result as: "testFile"
+        And I call the function: "get_checksum" on saved object: "testFile"
+        Then the result should equal: "b10a8db164e0754105b7a99be72e3fe5"
+        And delete the file identified by: "subdir/TestFile.txt"
+        And delete the folder identified by: "subdir"
