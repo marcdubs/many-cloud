@@ -11,7 +11,7 @@ const _getAzureBlobCredentials = () => {
     const creds = {
       account: process.env.CI_AZURE_BLOB_ACCOUNT,
       accountKey: process.env.CI_AZURE_BLOB_ACCOUNT_KEY,
-      shareURL: process.env.CI_AZURE_BLOB_CONTAINER_URL
+      containerURL: process.env.CI_AZURE_BLOB_CONTAINER_URL
     };
     fs.writeFileSync("./credentials/azure_blob.json", JSON.stringify(creds), "utf8");
   }
