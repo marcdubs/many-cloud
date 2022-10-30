@@ -57,5 +57,6 @@ for(let i = 0; i < file_list.length; i++) {
 | ![Google Drive](docs/gdrive.png) | ![Yes](docs/check.png) |
 | ![Box](docs/box.png) | ![Yes](docs/check.png) |
 | ![S3](docs/s3.png) | ![Yes](docs/check.png) |
-| Azure File Share | ![To do](docs/check.png) |
+| Azure File Share | ![Yes](docs/check.png) |
+| Azure Blob | ![Yes](docs/check.png) |
 | More to come! | |

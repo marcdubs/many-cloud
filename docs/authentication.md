@@ -12,7 +12,9 @@ Authentication with whatever cloud service(s) you are using is required for any 
 - [S3](#s3)
   * [All Authentication](#all-authentication)
 - [Azure File Share](#azure-file-share)
-	* [All Authentication](#all-authenticatio)
+	* [All Authentication](#all-authentication-1)
+- [Azure Blob](#azure-blob)
+	* [All Authentication](#all-authentication-2)
 
 ## Google Drive
 
@@ -163,5 +165,17 @@ let connection = await require("many-cloud").integration("AzureFileShare")({
 	account: STORAGE_ACCOUNT_NAME,
 	accountKey: STORAGE_ACCOUNT_KEY,
 	shareURL: AZURE_SHARE_URL
+});
+```
+
+## Azure Blob
+
+### All Authentication
+Get your **Storage account name** and **Key** from your storage account's access keys page (Under Security + Networking). Then, open the blob container you want to connect to and go to "Properties" and get your container's **URL**
+```js
+let connection = await require("many-cloud").integration("AzureBlob")({
+	account: STORAGE_ACCOUNT_NAME,
+	accountKey: STORAGE_ACCOUNT_KEY,
+	containerURL: AZURE_CONTAINER_URL
 });
 ```

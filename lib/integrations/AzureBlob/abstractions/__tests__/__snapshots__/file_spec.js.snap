@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Azure Blob File get_checksum gets the correct MD5 checksum for a file 1`] = `"0484d2c8be77e391ca6b4408990cd244"`;
