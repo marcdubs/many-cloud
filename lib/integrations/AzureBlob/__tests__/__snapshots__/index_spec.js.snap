@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Azure Blob without any parameters throws an error 1`] = `"No way to connect to Azure Blob Container provided. Need account + accountKey + containerURL."`;

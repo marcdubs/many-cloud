@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`upload_file when not provided a file path rejects with an error 1`] = `"Missing file path parameter."`;
-
-exports[`upload_file when provided a folder alerts the user to use upload_folder instead 1`] = `"Path represents a directory. Please use upload_folder."`;
-
-exports[`upload_file when uploading the file returns an error rejects with the error 1`] = `"Something absolutely terrible happened. Oh no."`;

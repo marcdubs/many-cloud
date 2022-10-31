@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`delete_file when the deletion returns an error rejects with the same error 1`] = `"Something absolutely terrible happened. Oh no."`;
